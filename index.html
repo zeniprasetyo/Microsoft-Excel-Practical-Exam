@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microsoft Excel Practical Exam</title>
+  <title>Ujian Praktik Excel</title>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -41,14 +41,18 @@
  <body class="w-full min-h-full">
   <div class="w-full min-h-full" style="background: linear-gradient(135deg, #1e7e34 0%, #28a745 100%);">
    <div class="w-full px-4 py-8 md:px-8 md:py-12">
-    <div class="max-w-5xl mx-auto"><!-- Header Section -->
+    <div class="max-w-5xl mx-auto"><!-- Language Switcher -->
+     <div class="flex justify-end mb-4 animate-slide-in"><button id="languageToggle" class="bg-white hover:bg-gray-50 text-gray-800 font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+       </svg><span id="languageText">Bahasa Indonesia</span> </button>
+     </div><!-- Header Section -->
      <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 mb-6 animate-slide-in">
       <div class="flex items-center justify-center mb-6">
        <svg class="w-16 h-16 md:w-20 md:h-20 mr-4" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="15" width="80" height="70" rx="4" fill="#217346" /> <rect x="20" y="25" width="25" height="8" fill="white" opacity="0.9" /> <rect x="20" y="38" width="25" height="8" fill="white" opacity="0.9" /> <rect x="20" y="51" width="25" height="8" fill="white" opacity="0.9" /> <rect x="20" y="64" width="25" height="8" fill="white" opacity="0.9" /> <rect x="50" y="25" width="30" height="8" fill="white" opacity="0.7" /> <rect x="50" y="38" width="30" height="8" fill="white" opacity="0.7" /> <rect x="50" y="51" width="30" height="8" fill="white" opacity="0.7" /> <rect x="50" y="64" width="30" height="8" fill="white" opacity="0.7" />
        </svg>
        <div>
-        <h1 id="page-title" class="text-center md:text-4xl font-bold text-gray-800 mb-1 justify-center">Microsoft Excel Practical Exam – Arithmetic Operations &amp; IF</h1>
-        <p id="class-info" class="text-center md:text-lg text-gray-600 font-medium">Grade 8 - SMPII AL ABIDIN </p>
+        <h1 id="page-title" class="text-2xl md:text-4xl font-bold text-gray-800 mb-1">Microsoft Excel Practical Exam – Arithmetic Operations &amp; IF</h1>
+        <p id="class-info" class="text-base md:text-lg text-gray-600 font-medium">Grade 8</p>
        </div>
       </div>
      </div><!-- Petunjuk Section -->
@@ -56,13 +60,13 @@
       <div class="flex items-start mb-4">
        <svg class="w-8 h-8 mr-3 flex-shrink-0" fill="none" stroke="#217346" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
        </svg>
-       <h2 class="text-xl md:text-2xl font-bold text-gray-800">📋 General Instructions</h2>
+       <h2 id="genInst" class="text-xl md:text-2xl font-bold text-gray-800">📋 General Instructions</h2>
       </div>
       <ul class="space-y-3 ml-11">
-       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span class="text-gray-700 text-base md:text-lg">Complete all questions using Microsoft Excel.</span></li>
-       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span class="text-gray-700 text-base md:text-lg">Use formulas, do not calculate manually.</span></li>
-       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span class="text-gray-700 text-base md:text-lg">Format tables and numbers neatly.</span></li>
-       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span class="text-gray-700 text-base md:text-lg">Save the file as: <strong>ExcelExam_StudentName.xlsx</strong></span></li>
+       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span id="inst1" class="text-gray-700 text-base md:text-lg">Complete all questions using Microsoft Excel.</span></li>
+       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span id="inst2" class="text-gray-700 text-base md:text-lg">Use formulas, do not calculate manually.</span></li>
+       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span id="inst3" class="text-gray-700 text-base md:text-lg">Format tables and numbers neatly.</span></li>
+       <li class="flex items-start"><span class="text-green-600 font-bold mr-3">✓</span> <span id="inst4" class="text-gray-700 text-base md:text-lg">Save the file as: <strong>ExcelExam_StudentName.xlsx</strong></span></li>
       </ul>
      </div><!-- Soal 1 -->
      <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-6 card-hover animate-slide-in" style="animation-delay: 0.2s;">
@@ -70,42 +74,42 @@
        <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4">
         1
        </div>
-       <h3 class="text-xl md:text-2xl font-bold text-gray-800">Simple Arithmetic Operations – Store Invoice</h3>
+       <h3 id="q1-title" class="text-xl md:text-2xl font-bold text-gray-800">Simple Arithmetic Operations – Store Invoice</h3>
       </div>
       <div class="ml-14">
-       <p class="text-gray-700 text-base md:text-lg mb-4">Create a store invoice table with the following columns:</p>
+       <p id="q1-desc" class="text-gray-700 text-base md:text-lg mb-4">Create a store invoice table with the following columns:</p>
        <div class="bg-green-50 p-4 rounded-lg mb-4">
         <ul class="space-y-2 text-gray-800">
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Item Name (at least 5 items)</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Quantity</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Unit Price</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Subtotal</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Discount 10%</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Total Price</span></li>
+         <li id="q1-col1" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Item Name (at least 5 items)</span></li>
+         <li id="q1-col2" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Quantity</span></li>
+         <li id="q1-col3" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Unit Price</span></li>
+         <li id="q1-col4" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Subtotal</span></li>
+         <li id="q1-col5" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Discount 10%</span></li>
+         <li id="q1-col6" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Total Price</span></li>
         </ul>
        </div>
        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-4">
-        <p class="text-gray-800 font-semibold">📝 Instructions - Use ALL arithmetic operations:</p>
+        <p id="q1-instructions" class="text-gray-800 font-semibold">📝 Instructions - Use ALL arithmetic operations:</p>
         <ul class="space-y-2 mt-2 text-gray-700">
-         <li>• <strong>Subtotal</strong> = Quantity <span class="font-bold text-red-600">×</span> Unit Price <span class="text-sm text-gray-600">(MULTIPLICATION)</span></li>
-         <li>• <strong>Discount 10%</strong> = Subtotal <span class="font-bold text-red-600">×</span> 10% <span class="text-sm text-gray-600">(MULTIPLICATION with percentage)</span></li>
-         <li>• <strong>Total Price</strong> = Subtotal <span class="font-bold text-red-600">−</span> Discount <span class="text-sm text-gray-600">(SUBTRACTION)</span></li>
-         <li>• Add <strong>GRAND TOTAL</strong> at the bottom using <span class="font-bold text-red-600">SUM</span> function <span class="text-sm text-gray-600">(ADDITION of all)</span></li>
-         <li>• Add <strong>AVERAGE PRICE</strong> using <span class="font-bold text-red-600">AVERAGE</span> function <span class="text-sm text-gray-600">(DIVISION)</span></li>
+         <li id="q1-inst1">• <strong>Subtotal</strong> = Quantity <span class="font-bold text-red-600">×</span> Unit Price <span class="text-sm text-gray-600">(MULTIPLICATION)</span></li>
+         <li id="q1-inst2">• <strong>Discount 10%</strong> = Subtotal <span class="font-bold text-red-600">×</span> 10% <span class="text-sm text-gray-600">(MULTIPLICATION with percentage)</span></li>
+         <li id="q1-inst3">• <strong>Total Price</strong> = Subtotal <span class="font-bold text-red-600">−</span> Discount <span class="text-sm text-gray-600">(SUBTRACTION)</span></li>
+         <li id="q1-inst4">• Add <strong>GRAND TOTAL</strong> at the bottom using <span class="font-bold text-red-600">SUM</span> function <span class="text-sm text-gray-600">(ADDITION of all)</span></li>
+         <li id="q1-inst5">• Add <strong>AVERAGE PRICE</strong> using <span class="font-bold text-red-600">AVERAGE</span> function <span class="text-sm text-gray-600">(DIVISION)</span></li>
         </ul>
        </div>
        <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
-        <p class="text-gray-700 font-semibold mb-3">💡 Example Table:</p>
+        <p id="q1-example" class="text-gray-700 font-semibold mb-3">💡 Example Table:</p>
         <div class="overflow-x-auto">
          <table class="w-full text-sm border-collapse">
           <thead>
            <tr class="bg-green-600 text-white">
-            <th class="border border-gray-300 px-3 py-2 text-left">Item Name</th>
-            <th class="border border-gray-300 px-3 py-2">Qty</th>
-            <th class="border border-gray-300 px-3 py-2">Unit Price</th>
-            <th class="border border-gray-300 px-3 py-2">Subtotal</th>
-            <th class="border border-gray-300 px-3 py-2">Disc 10%</th>
-            <th class="border border-gray-300 px-3 py-2">Total Price</th>
+            <th id="q1-th1" class="border border-gray-300 px-3 py-2 text-left">Item Name</th>
+            <th id="q1-th2" class="border border-gray-300 px-3 py-2">Qty</th>
+            <th id="q1-th3" class="border border-gray-300 px-3 py-2">Unit Price</th>
+            <th id="q1-th4" class="border border-gray-300 px-3 py-2">Subtotal</th>
+            <th id="q1-th5" class="border border-gray-300 px-3 py-2">Disc 10%</th>
+            <th id="q1-th6" class="border border-gray-300 px-3 py-2">Total Price</th>
            </tr>
           </thead>
           <tbody class="bg-white">
@@ -150,11 +154,11 @@
             <td class="border border-gray-300 px-3 py-2 text-center"></td>
            </tr>
            <tr class="bg-yellow-50 font-bold">
-            <td colspan="5" class="border border-gray-300 px-3 py-2 text-right">GRAND TOTAL:</td>
+            <td colspan="5" id="q1-grand" class="border border-gray-300 px-3 py-2 text-right">GRAND TOTAL:</td>
             <td class="border border-gray-300 px-3 py-2 text-center"></td>
            </tr>
            <tr class="bg-blue-50 font-bold">
-            <td colspan="5" class="border border-gray-300 px-3 py-2 text-right">AVERAGE PRICE:</td>
+            <td colspan="5" id="q1-avg" class="border border-gray-300 px-3 py-2 text-right">AVERAGE PRICE:</td>
             <td class="border border-gray-300 px-3 py-2 text-center"></td>
            </tr>
           </tbody>
@@ -168,48 +172,48 @@
        <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4">
         2
        </div>
-       <h3 class="text-xl md:text-2xl font-bold text-gray-800">Student Grade Report with Statistics</h3>
+       <h3 id="q2-title" class="text-xl md:text-2xl font-bold text-gray-800">Student Grade Report with Statistics</h3>
       </div>
       <div class="ml-14">
-       <p class="text-gray-700 text-base md:text-lg mb-4">Create a grade table for at least 6 students with 4 subjects:</p>
+       <p id="q2-desc" class="text-gray-700 text-base md:text-lg mb-4">Create a grade table for at least 6 students with 4 subjects:</p>
        <div class="bg-green-50 p-4 rounded-lg mb-4">
         <ul class="space-y-2 text-gray-800">
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Student Name (min. 6 students)</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Mathematics</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Science</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Indonesian Language</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">English Language</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Total Score</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Average</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Highest Score</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Lowest Score</span></li>
+         <li id="q2-col1" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Student Name (min. 6 students)</span></li>
+         <li id="q2-col2" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Mathematics</span></li>
+         <li id="q2-col3" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Science</span></li>
+         <li id="q2-col4" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Indonesian Language</span></li>
+         <li id="q2-col5" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">English Language</span></li>
+         <li id="q2-col6" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Total Score</span></li>
+         <li id="q2-col7" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Average</span></li>
+         <li id="q2-col8" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Highest Score</span></li>
+         <li id="q2-col9" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Lowest Score</span></li>
         </ul>
        </div>
        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-4">
-        <p class="text-gray-800 font-semibold">📝 Instructions:</p>
+        <p id="q2-instructions" class="text-gray-800 font-semibold">📝 Instructions:</p>
         <ul class="space-y-2 mt-2 text-gray-700">
-         <li>• <strong>Total Score</strong> = Use <span class="font-bold text-red-600">SUM</span> function to add all 4 subjects</li>
-         <li>• <strong>Average</strong> = Use <span class="font-bold text-red-600">AVERAGE</span> function from 4 subjects</li>
-         <li>• <strong>Highest Score</strong> = Use <span class="font-bold text-red-600">MAX</span> function to find highest from 4 subjects</li>
-         <li>• <strong>Lowest Score</strong> = Use <span class="font-bold text-red-600">MIN</span> function to find lowest from 4 subjects</li>
-         <li>• Use at least 6 students</li>
+         <li id="q2-inst1">• <strong>Total Score</strong> = Use <span class="font-bold text-red-600">SUM</span> function to add all 4 subjects</li>
+         <li id="q2-inst2">• <strong>Average</strong> = Use <span class="font-bold text-red-600">AVERAGE</span> function from 4 subjects</li>
+         <li id="q2-inst3">• <strong>Highest Score</strong> = Use <span class="font-bold text-red-600">MAX</span> function to find highest from 4 subjects</li>
+         <li id="q2-inst4">• <strong>Lowest Score</strong> = Use <span class="font-bold text-red-600">MIN</span> function to find lowest from 4 subjects</li>
+         <li id="q2-inst5">• Use at least 6 students</li>
         </ul>
        </div>
        <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
-        <p class="text-gray-700 font-semibold mb-3">💡 Example Table:</p>
+        <p id="q2-example" class="text-gray-700 font-semibold mb-3">💡 Example Table:</p>
         <div class="overflow-x-auto">
          <table class="w-full text-xs border-collapse">
           <thead>
            <tr class="bg-green-600 text-white">
-            <th class="border border-gray-300 px-2 py-2 text-left">Name</th>
-            <th class="border border-gray-300 px-2 py-2">Math</th>
-            <th class="border border-gray-300 px-2 py-2">Sci</th>
-            <th class="border border-gray-300 px-2 py-2">Indo</th>
-            <th class="border border-gray-300 px-2 py-2">Eng</th>
-            <th class="border border-gray-300 px-2 py-2">Total</th>
-            <th class="border border-gray-300 px-2 py-2">Avg</th>
-            <th class="border border-gray-300 px-2 py-2">Max</th>
-            <th class="border border-gray-300 px-2 py-2">Min</th>
+            <th id="q2-th1" class="border border-gray-300 px-2 py-2 text-left">Name</th>
+            <th id="q2-th2" class="border border-gray-300 px-2 py-2">Math</th>
+            <th id="q2-th3" class="border border-gray-300 px-2 py-2">Sci</th>
+            <th id="q2-th4" class="border border-gray-300 px-2 py-2">Indo</th>
+            <th id="q2-th5" class="border border-gray-300 px-2 py-2">Eng</th>
+            <th id="q2-th6" class="border border-gray-300 px-2 py-2">Total</th>
+            <th id="q2-th7" class="border border-gray-300 px-2 py-2">Avg</th>
+            <th id="q2-th8" class="border border-gray-300 px-2 py-2">Max</th>
+            <th id="q2-th9" class="border border-gray-300 px-2 py-2">Min</th>
            </tr>
           </thead>
           <tbody class="bg-white">
@@ -290,50 +294,50 @@
        <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4">
         3
        </div>
-       <h3 class="text-xl md:text-2xl font-bold text-gray-800">Nested IF Function – Grade Classification</h3>
+       <h3 id="q3-title" class="text-xl md:text-2xl font-bold text-gray-800">Nested IF Function – Grade Classification</h3>
       </div>
       <div class="ml-14">
-       <p class="text-gray-700 text-base md:text-lg mb-4">Create a grade classification table with the following columns:</p>
+       <p id="q3-desc" class="text-gray-700 text-base md:text-lg mb-4">Create a grade classification table with the following columns:</p>
        <div class="bg-green-50 p-4 rounded-lg mb-4">
         <ul class="space-y-2 text-gray-800">
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Student Name (min. 6 students)</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Final Grade (0-100)</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Grade (A / B / C / D / E)</span></li>
-         <li class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Status (PASS / FAIL)</span></li>
+         <li id="q3-col1" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Student Name (min. 6 students)</span></li>
+         <li id="q3-col2" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Final Grade (0-100)</span></li>
+         <li id="q3-col3" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Grade (A / B / C / D / E)</span></li>
+         <li id="q3-col4" class="flex items-center"><span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span> <span class="font-semibold">Status (PASS / FAIL)</span></li>
         </ul>
        </div>
        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-4">
-        <p class="text-gray-800 font-semibold">📝 Instructions - Use NESTED IF function:</p>
+        <p id="q3-instructions" class="text-gray-800 font-semibold">📝 Instructions - Use NESTED IF function:</p>
         <div class="mt-3 space-y-3">
          <div>
-          <p class="text-gray-800 font-semibold mb-1">1️⃣ Grade Column - Use nested IF:</p>
+          <p id="q3-inst-title1" class="text-gray-800 font-semibold mb-1">1️⃣ Grade Column - Use nested IF:</p>
           <ul class="ml-4 space-y-1 text-gray-700">
-           <li>• Score ≥ 85 = <strong>"A"</strong></li>
-           <li>• Score ≥ 75 = <strong>"B"</strong></li>
-           <li>• Score ≥ 65 = <strong>"C"</strong></li>
-           <li>• Score ≥ 55 = <strong>"D"</strong></li>
-           <li>• Score &lt; 55 = <strong>"E"</strong></li>
+           <li id="q3-inst1a">• Score ≥ 85 = <strong>"A"</strong></li>
+           <li id="q3-inst1b">• Score ≥ 75 = <strong>"B"</strong></li>
+           <li id="q3-inst1c">• Score ≥ 65 = <strong>"C"</strong></li>
+           <li id="q3-inst1d">• Score ≥ 55 = <strong>"D"</strong></li>
+           <li id="q3-inst1e">• Score &lt; 55 = <strong>"E"</strong></li>
           </ul>
          </div>
          <div>
-          <p class="text-gray-800 font-semibold mb-1">2️⃣ Status Column - Use simple IF:</p>
+          <p id="q3-inst-title2" class="text-gray-800 font-semibold mb-1">2️⃣ Status Column - Use simple IF:</p>
           <ul class="ml-4 space-y-1 text-gray-700">
-           <li>• Score ≥ 65 = <strong>"PASS"</strong></li>
-           <li>• Score &lt; 65 = <strong>"FAIL"</strong></li>
+           <li id="q3-inst2a">• Score ≥ 65 = <strong>"PASS"</strong></li>
+           <li id="q3-inst2b">• Score &lt; 65 = <strong>"FAIL"</strong></li>
           </ul>
          </div>
         </div>
        </div>
        <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
-        <p class="text-gray-700 font-semibold mb-3">💡 Example Table:</p>
+        <p id="q3-example" class="text-gray-700 font-semibold mb-3">💡 Example Table:</p>
         <div class="overflow-x-auto">
          <table class="w-full text-sm border-collapse">
           <thead>
            <tr class="bg-green-600 text-white">
-            <th class="border border-gray-300 px-3 py-2 text-left">Student Name</th>
-            <th class="border border-gray-300 px-3 py-2 text-center">Final Grade</th>
-            <th class="border border-gray-300 px-3 py-2 text-center">Grade</th>
-            <th class="border border-gray-300 px-3 py-2 text-center">Status</th>
+            <th id="q3-th1" class="border border-gray-300 px-3 py-2 text-left">Student Name</th>
+            <th id="q3-th2" class="border border-gray-300 px-3 py-2 text-center">Final Grade</th>
+            <th id="q3-th3" class="border border-gray-300 px-3 py-2 text-center">Grade</th>
+            <th id="q3-th4" class="border border-gray-300 px-3 py-2 text-center">Status</th>
            </tr>
           </thead>
           <tbody class="bg-white">
@@ -383,13 +387,13 @@
       <div class="mb-4">
        <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="#217346" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
        </svg>
-       <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Submit Your Work</h3>
-       <p class="text-gray-600 mb-6">Click the button below to upload your Excel file</p>
-      </div><a href="https://forms.gle/1gpouujxPWy99t569" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"> 📤 Submit Excel File </a>
+       <h3 id="submit-title" class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Submit Your Work</h3>
+       <p id="submit-desc" class="text-gray-600 mb-6">Click the button below to upload your Excel file</p>
+      </div><a href="https://forms.gle/1gpouujxPWy99t569" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"> <span id="submit-btn">📤 Submit Excel File</span> </a>
      </div><!-- Footer -->
      <div class="bg-white rounded-2xl shadow-xl p-6 text-center animate-slide-in" style="animation-delay: 0.6s;">
       <p id="footer-text" class="text-gray-700 text-base md:text-lg font-semibold">Microsoft Excel Practical Exam Assignment – Grade 8</p>
-      <p class="text-gray-500 text-sm mt-2">Good luck! 💪</p>
+      <p id="footer-luck" class="text-gray-500 text-sm mt-2">Good luck! 💪</p>
      </div>
     </div>
    </div>
@@ -405,6 +409,326 @@
       text_color: "#1f2937",
       highlight_color: "#28a745"
     };
+
+    // Language content
+    let currentLanguage = 'en';
+    const content = {
+      en: {
+        languageBtn: "Bahasa Indonesia",
+        pageTitle: "Microsoft Excel Practical Exam – Arithmetic Operations & IF",
+        classInfo: "Grade 8",
+        generalInstructions: "📋 General Instructions",
+        instruction1: "Complete all questions using Microsoft Excel.",
+        instruction2: "Use formulas, do not calculate manually.",
+        instruction3: "Format tables and numbers neatly.",
+        instruction4: "Save the file as:",
+        fileName: "ExcelExam_StudentName.xlsx",
+        
+        q1Title: "Simple Arithmetic Operations – Store Invoice",
+        q1Desc: "Create a store invoice table with the following columns:",
+        q1Col1: "Item Name (at least 5 items)",
+        q1Col2: "Quantity",
+        q1Col3: "Unit Price",
+        q1Col4: "Subtotal",
+        q1Col5: "Discount 10%",
+        q1Col6: "Total Price",
+        q1Instructions: "📝 Instructions - Use ALL arithmetic operations:",
+        q1Inst1: "= Quantity",
+        q1Inst1b: "Unit Price",
+        q1Inst1c: "(MULTIPLICATION)",
+        q1Inst2: "= Subtotal",
+        q1Inst2b: "10%",
+        q1Inst2c: "(MULTIPLICATION with percentage)",
+        q1Inst3: "= Subtotal",
+        q1Inst3b: "Discount",
+        q1Inst3c: "(SUBTRACTION)",
+        q1Inst4: "Add",
+        q1Inst4b: "at the bottom using",
+        q1Inst4c: "function",
+        q1Inst4d: "(ADDITION of all)",
+        q1Inst5: "Add",
+        q1Inst5b: "using",
+        q1Inst5c: "function",
+        q1Inst5d: "(DIVISION)",
+        q1Example: "💡 Example Table:",
+        q1TableQty: "Qty",
+        q1GrandTotal: "GRAND TOTAL:",
+        q1AvgPrice: "AVERAGE PRICE:",
+        
+        q2Title: "Student Grade Report with Statistics",
+        q2Desc: "Create a grade table for at least 6 students with 4 subjects:",
+        q2Col1: "Student Name (min. 6 students)",
+        q2Col2: "Mathematics",
+        q2Col3: "Science",
+        q2Col4: "Indonesian Language",
+        q2Col5: "English Language",
+        q2Col6: "Total Score",
+        q2Col7: "Average",
+        q2Col8: "Highest Score",
+        q2Col9: "Lowest Score",
+        q2Instructions: "📝 Instructions:",
+        q2Inst1: "= Use",
+        q2Inst1b: "function to add all 4 subjects",
+        q2Inst2: "= Use",
+        q2Inst2b: "function from 4 subjects",
+        q2Inst3: "= Use",
+        q2Inst3b: "function to find highest from 4 subjects",
+        q2Inst4: "= Use",
+        q2Inst4b: "function to find lowest from 4 subjects",
+        q2Inst5: "• Use at least 6 students",
+        q2Example: "💡 Example Table:",
+        q2TableMath: "Math",
+        q2TableSci: "Sci",
+        q2TableIndo: "Indo",
+        q2TableEng: "Eng",
+        q2TableTotal: "Total",
+        q2TableAvg: "Avg",
+        q2TableMax: "Max",
+        q2TableMin: "Min",
+        
+        q3Title: "Nested IF Function – Grade Classification",
+        q3Desc: "Create a grade classification table with the following columns:",
+        q3Col1: "Student Name (min. 6 students)",
+        q3Col2: "Final Grade (0-100)",
+        q3Col3: "Grade (A / B / C / D / E)",
+        q3Col4: "Status (PASS / FAIL)",
+        q3Instructions: "📝 Instructions - Use NESTED IF function:",
+        q3Inst1Title: "1️⃣ Grade Column - Use nested IF:",
+        q3Inst1a: "• Score ≥ 85 =",
+        q3Inst1b: "• Score ≥ 75 =",
+        q3Inst1c: "• Score ≥ 65 =",
+        q3Inst1d: "• Score ≥ 55 =",
+        q3Inst1e: "• Score < 55 =",
+        q3Inst2Title: "2️⃣ Status Column - Use simple IF:",
+        q3Inst2a: "• Score ≥ 65 =",
+        q3Inst2b: "• Score < 65 =",
+        q3Example: "💡 Example Table:",
+        q3TableFinal: "Final Grade",
+        q3TableGrade: "Grade",
+        q3TableStatus: "Status",
+        
+        submitTitle: "Submit Your Work",
+        submitDesc: "Click the button below to upload your Excel file",
+        submitBtn: "📤 Submit Excel File",
+        footerText: "Microsoft Excel Practical Exam Assignment – Grade 8",
+        footerGoodLuck: "Good luck! 💪"
+      },
+      id: {
+        languageBtn: "English",
+        pageTitle: "Ujian Praktik Microsoft Excel – Operasi Aritmatika & IF",
+        classInfo: "Kelas 8",
+        generalInstructions: "📋 Petunjuk Umum",
+        instruction1: "Kerjakan semua soal menggunakan Microsoft Excel.",
+        instruction2: "Gunakan rumus/formula, jangan hitung manual.",
+        instruction3: "Rapikan tabel dan format angka dengan baik.",
+        instruction4: "Simpan file dengan nama:",
+        fileName: "UjianExcel_NamaSiswa.xlsx",
+        
+        q1Title: "Operasi Aritmatika Sederhana – Nota Toko",
+        q1Desc: "Buat tabel nota toko dengan kolom berikut:",
+        q1Col1: "Nama Barang (minimal 5 barang)",
+        q1Col2: "Jumlah",
+        q1Col3: "Harga Satuan",
+        q1Col4: "Subtotal",
+        q1Col5: "Diskon 10%",
+        q1Col6: "Total Harga",
+        q1Instructions: "📝 Instruksi - Gunakan SEMUA operasi aritmatika:",
+        q1Inst1: "= Jumlah",
+        q1Inst1b: "Harga Satuan",
+        q1Inst1c: "(PERKALIAN)",
+        q1Inst2: "= Subtotal",
+        q1Inst2b: "10%",
+        q1Inst2c: "(PERKALIAN dengan persen)",
+        q1Inst3: "= Subtotal",
+        q1Inst3b: "Diskon",
+        q1Inst3c: "(PENGURANGAN)",
+        q1Inst4: "Tambahkan",
+        q1Inst4b: "di bawah pakai fungsi",
+        q1Inst4c: "",
+        q1Inst4d: "(PENJUMLAHAN semua)",
+        q1Inst5: "Tambahkan",
+        q1Inst5b: "pakai fungsi",
+        q1Inst5c: "",
+        q1Inst5d: "(PEMBAGIAN)",
+        q1Example: "💡 Contoh Tabel:",
+        q1TableQty: "Jumlah",
+        q1GrandTotal: "TOTAL SEMUA:",
+        q1AvgPrice: "RATA-RATA HARGA:",
+        
+        q2Title: "Laporan Nilai Siswa dengan Statistik",
+        q2Desc: "Buat tabel nilai untuk minimal 6 siswa dengan 4 mata pelajaran:",
+        q2Col1: "Nama Siswa (min. 6 siswa)",
+        q2Col2: "Matematika",
+        q2Col3: "IPA",
+        q2Col4: "Bahasa Indonesia",
+        q2Col5: "Bahasa Inggris",
+        q2Col6: "Total Nilai",
+        q2Col7: "Rata-rata",
+        q2Col8: "Nilai Tertinggi",
+        q2Col9: "Nilai Terendah",
+        q2Instructions: "📝 Instruksi:",
+        q2Inst1: "= Pakai fungsi",
+        q2Inst1b: "untuk menjumlahkan 4 mata pelajaran",
+        q2Inst2: "= Pakai fungsi",
+        q2Inst2b: "dari 4 mata pelajaran",
+        q2Inst3: "= Pakai fungsi",
+        q2Inst3b: "untuk cari nilai tertinggi dari 4 mapel",
+        q2Inst4: "= Pakai fungsi",
+        q2Inst4b: "untuk cari nilai terendah dari 4 mapel",
+        q2Inst5: "• Minimal 6 siswa",
+        q2Example: "💡 Contoh Tabel:",
+        q2TableMath: "MTK",
+        q2TableSci: "IPA",
+        q2TableIndo: "B.Indo",
+        q2TableEng: "B.Ing",
+        q2TableTotal: "Total",
+        q2TableAvg: "Rata2",
+        q2TableMax: "Max",
+        q2TableMin: "Min",
+        
+        q3Title: "Fungsi Nested IF – Klasifikasi Grade",
+        q3Desc: "Buat tabel klasifikasi grade dengan kolom berikut:",
+        q3Col1: "Nama Siswa (min. 6 siswa)",
+        q3Col2: "Nilai Akhir (0-100)",
+        q3Col3: "Grade (A / B / C / D / E)",
+        q3Col4: "Status (LULUS / TIDAK LULUS)",
+        q3Instructions: "📝 Instruksi - Pakai fungsi NESTED IF:",
+        q3Inst1Title: "1️⃣ Kolom Grade - Pakai nested IF:",
+        q3Inst1a: "• Nilai ≥ 85 =",
+        q3Inst1b: "• Nilai ≥ 75 =",
+        q3Inst1c: "• Nilai ≥ 65 =",
+        q3Inst1d: "• Nilai ≥ 55 =",
+        q3Inst1e: "• Nilai < 55 =",
+        q3Inst2Title: "2️⃣ Kolom Status - Pakai IF sederhana:",
+        q3Inst2a: "• Nilai ≥ 65 =",
+        q3Inst2b: "• Nilai < 65 =",
+        q3Example: "💡 Contoh Tabel:",
+        q3TableFinal: "Nilai Akhir",
+        q3TableGrade: "Grade",
+        q3TableStatus: "Status",
+        
+        submitTitle: "Kirim Hasil Kerja",
+        submitDesc: "Klik tombol di bawah untuk upload file Excel kamu",
+        submitBtn: "📤 Kirim File Excel",
+        footerText: "Tugas Ujian Praktik Microsoft Excel – Kelas 8",
+        footerGoodLuck: "Semangat! 💪"
+      }
+    };
+
+    // Language toggle function
+    function updateLanguage(lang) {
+      currentLanguage = lang;
+      const c = content[lang];
+      
+      // Language button
+      document.getElementById('languageText').textContent = c.languageBtn;
+      
+      // Header
+      document.getElementById('page-title').textContent = c.pageTitle;
+      document.getElementById('class-info').textContent = c.classInfo;
+      
+      // General Instructions
+      document.getElementById('genInst').textContent = c.generalInstructions;
+      document.getElementById('inst1').textContent = c.instruction1;
+      document.getElementById('inst2').textContent = c.instruction2;
+      document.getElementById('inst3').textContent = c.instruction3;
+      document.getElementById('inst4').innerHTML = `${c.instruction4} <strong>${c.fileName}</strong>`;
+      
+      // Question 1
+      document.getElementById('q1-title').textContent = c.q1Title;
+      document.getElementById('q1-desc').textContent = c.q1Desc;
+      document.getElementById('q1-col1').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q1Col1}</span>`;
+      document.getElementById('q1-col2').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q1Col2}</span>`;
+      document.getElementById('q1-col3').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q1Col3}</span>`;
+      document.getElementById('q1-col4').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q1Col4}</span>`;
+      document.getElementById('q1-col5').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q1Col5}</span>`;
+      document.getElementById('q1-col6').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q1Col6}</span>`;
+      document.getElementById('q1-instructions').textContent = c.q1Instructions;
+      document.getElementById('q1-inst1').innerHTML = `• <strong>${c.q1Col4}</strong> ${c.q1Inst1} <span class="font-bold text-red-600">×</span> ${c.q1Inst1b} <span class="text-sm text-gray-600">${c.q1Inst1c}</span>`;
+      document.getElementById('q1-inst2').innerHTML = `• <strong>${c.q1Col5}</strong> ${c.q1Inst2} <span class="font-bold text-red-600">×</span> ${c.q1Inst2b} <span class="text-sm text-gray-600">${c.q1Inst2c}</span>`;
+      document.getElementById('q1-inst3').innerHTML = `• <strong>${c.q1Col6}</strong> ${c.q1Inst3} <span class="font-bold text-red-600">−</span> ${c.q1Inst3b} <span class="text-sm text-gray-600">${c.q1Inst3c}</span>`;
+      document.getElementById('q1-inst4').innerHTML = `• ${c.q1Inst4} <strong>${c.q1GrandTotal.replace(':', '')}</strong> ${c.q1Inst4b} <span class="font-bold text-red-600">SUM</span> ${c.q1Inst4c} <span class="text-sm text-gray-600">${c.q1Inst4d}</span>`;
+      document.getElementById('q1-inst5').innerHTML = `• ${c.q1Inst5} <strong>${c.q1AvgPrice.replace(':', '')}</strong> ${c.q1Inst5b} <span class="font-bold text-red-600">AVERAGE</span> ${c.q1Inst5c} <span class="text-sm text-gray-600">${c.q1Inst5d}</span>`;
+      document.getElementById('q1-example').textContent = c.q1Example;
+      document.getElementById('q1-th1').textContent = c.q1Col1.split('(')[0].trim();
+      document.getElementById('q1-th2').textContent = c.q1TableQty;
+      document.getElementById('q1-th3').textContent = c.q1Col3;
+      document.getElementById('q1-th4').textContent = c.q1Col4;
+      document.getElementById('q1-th5').textContent = c.q1Col5.split(' ')[0];
+      document.getElementById('q1-th6').textContent = c.q1Col6;
+      document.getElementById('q1-grand').textContent = c.q1GrandTotal;
+      document.getElementById('q1-avg').textContent = c.q1AvgPrice;
+      
+      // Question 2
+      document.getElementById('q2-title').textContent = c.q2Title;
+      document.getElementById('q2-desc').textContent = c.q2Desc;
+      document.getElementById('q2-col1').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col1}</span>`;
+      document.getElementById('q2-col2').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col2}</span>`;
+      document.getElementById('q2-col3').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col3}</span>`;
+      document.getElementById('q2-col4').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col4}</span>`;
+      document.getElementById('q2-col5').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col5}</span>`;
+      document.getElementById('q2-col6').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col6}</span>`;
+      document.getElementById('q2-col7').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col7}</span>`;
+      document.getElementById('q2-col8').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col8}</span>`;
+      document.getElementById('q2-col9').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q2Col9}</span>`;
+      document.getElementById('q2-instructions').textContent = c.q2Instructions;
+      document.getElementById('q2-inst1').innerHTML = `• <strong>${c.q2Col6}</strong> ${c.q2Inst1} <span class="font-bold text-red-600">SUM</span> ${c.q2Inst1b}`;
+      document.getElementById('q2-inst2').innerHTML = `• <strong>${c.q2Col7}</strong> ${c.q2Inst2} <span class="font-bold text-red-600">AVERAGE</span> ${c.q2Inst2b}`;
+      document.getElementById('q2-inst3').innerHTML = `• <strong>${c.q2Col8}</strong> ${c.q2Inst3} <span class="font-bold text-red-600">MAX</span> ${c.q2Inst3b}`;
+      document.getElementById('q2-inst4').innerHTML = `• <strong>${c.q2Col9}</strong> ${c.q2Inst4} <span class="font-bold text-red-600">MIN</span> ${c.q2Inst4b}`;
+      document.getElementById('q2-inst5').textContent = c.q2Inst5;
+      document.getElementById('q2-example').textContent = c.q2Example;
+      document.getElementById('q2-th1').textContent = c.q2Col1.split('(')[0].trim();
+      document.getElementById('q2-th2').textContent = c.q2TableMath;
+      document.getElementById('q2-th3').textContent = c.q2TableSci;
+      document.getElementById('q2-th4').textContent = c.q2TableIndo;
+      document.getElementById('q2-th5').textContent = c.q2TableEng;
+      document.getElementById('q2-th6').textContent = c.q2TableTotal;
+      document.getElementById('q2-th7').textContent = c.q2TableAvg;
+      document.getElementById('q2-th8').textContent = c.q2TableMax;
+      document.getElementById('q2-th9').textContent = c.q2TableMin;
+      
+      // Question 3
+      document.getElementById('q3-title').textContent = c.q3Title;
+      document.getElementById('q3-desc').textContent = c.q3Desc;
+      document.getElementById('q3-col1').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q3Col1}</span>`;
+      document.getElementById('q3-col2').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q3Col2}</span>`;
+      document.getElementById('q3-col3').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q3Col3}</span>`;
+      document.getElementById('q3-col4').innerHTML = `<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span><span class="font-semibold">${c.q3Col4}</span>`;
+      document.getElementById('q3-instructions').textContent = c.q3Instructions;
+      document.getElementById('q3-inst-title1').textContent = c.q3Inst1Title;
+      document.getElementById('q3-inst1a').innerHTML = `${c.q3Inst1a} <strong>"A"</strong>`;
+      document.getElementById('q3-inst1b').innerHTML = `${c.q3Inst1b} <strong>"B"</strong>`;
+      document.getElementById('q3-inst1c').innerHTML = `${c.q3Inst1c} <strong>"C"</strong>`;
+      document.getElementById('q3-inst1d').innerHTML = `${c.q3Inst1d} <strong>"D"</strong>`;
+      document.getElementById('q3-inst1e').innerHTML = `${c.q3Inst1e} <strong>"E"</strong>`;
+      document.getElementById('q3-inst-title2').textContent = c.q3Inst2Title;
+      document.getElementById('q3-inst2a').innerHTML = `${c.q3Inst2a} <strong>"${lang === 'en' ? 'PASS' : 'LULUS'}"</strong>`;
+      document.getElementById('q3-inst2b').innerHTML = `${c.q3Inst2b} <strong>"${lang === 'en' ? 'FAIL' : 'TIDAK LULUS'}"</strong>`;
+      document.getElementById('q3-example').textContent = c.q3Example;
+      document.getElementById('q3-th1').textContent = c.q3Col1.split('(')[0].trim();
+      document.getElementById('q3-th2').textContent = c.q3TableFinal;
+      document.getElementById('q3-th3').textContent = c.q3TableGrade;
+      document.getElementById('q3-th4').textContent = c.q3TableStatus;
+      
+      // Submit section
+      document.getElementById('submit-title').textContent = c.submitTitle;
+      document.getElementById('submit-desc').textContent = c.submitDesc;
+      document.getElementById('submit-btn').textContent = c.submitBtn;
+      
+      // Footer
+      document.getElementById('footer-text').textContent = c.footerText;
+      document.getElementById('footer-luck').textContent = c.footerGoodLuck;
+    }
+
+    // Toggle language on button click
+    document.getElementById('languageToggle').addEventListener('click', () => {
+      const newLang = currentLanguage === 'en' ? 'id' : 'en';
+      updateLanguage(newLang);
+    });
+
+    // Initialize with English
+    updateLanguage('en');
 
     async function onConfigChange(config) {
       const pageTitle = config.page_title || defaultConfig.page_title;
@@ -500,5 +824,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a3dbbc545539e4a',t:'MTc2NDAzNzkyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a3f1494264bce11',t:'MTc2NDA1MjA0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
